@@ -1,4 +1,4 @@
-// Define unique sounds for specific keys using Howler.js
+
 const soundMap = {
     "A": new Howl({ src: ["downfall-3-208028.mp3"],volume: 1.0  }),
     "S": new Howl({ src: ["ascent-braam-magma-brass-d-cinematic-trailer-sound-effect-222269.mp3"] }),
@@ -14,15 +14,15 @@ const soundMap = {
     "V": new Howl({ src: ["dark-future-logo-196217.mp3"] }),
     
 
-    // Add more key-sound mappings as needed
+    
   };
   
-  // Function to create bubble animation at a random position
+  
   function createBubble() {
     const bubble = document.createElement("div");
     bubble.classList.add("bubble");
   
-    // Set a random position for the bubble within the viewport
+    
     const x = Math.random() * window.innerWidth;
     const y = Math.random() * window.innerHeight;
   
@@ -31,17 +31,15 @@ const soundMap = {
   
     document.getElementById("bubble-container").appendChild(bubble);
   
-    // Remove the bubble after the animation ends
     bubble.addEventListener("animationend", () => {
       bubble.remove();
     });
   }
   
-  // Detect keypress, play sound, and create bubble
   document.addEventListener("keydown", (event) => {
     const key = event.key.toUpperCase();
     
-    // Check if the key has a corresponding sound
+
     if (soundMap[key]) {
       soundMap[key].play();
       createBubble();
